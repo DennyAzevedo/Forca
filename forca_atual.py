@@ -62,26 +62,24 @@ def forca(x):
     print("|               ")
     print("|    Lamento! Perdeu! ")
     print("|")
-#VARIAVEIS GLOBAIS
+
 erros=0
-#CAPTURA PALAVRA INICIAL
 word=input('Informe a palavra: ');
 temp=[]
 for letra in word:
   temp.append('_')
 
 while True:
-  print('\n'*20) # limpa a tela
-  forca(erros) # imprime desenho da forca
-  #imprime a adivinhacao
+  print('\n'*20)
+  forca(erros)
   print('\n\nAdivinhe: ', end='')
   for let in temp:
     print(let, end=' ')
   print('\n'*2)
-  #Verifica se perdeu
-  if erros==6: 
-    break #sai do jogo (sai do while)
-  #Verificar se o jogador ganhou
+
+  if erros==6:
+    break
+
   ganhouJogo=True
   for let in temp:
     if let=='_':
@@ -89,9 +87,9 @@ while True:
   if ganhouJogo:
     print('\nPARABÉNS VENCEDOR!!!')
     break
-  #captura a letra do usuario
+
   letraDig=input("Informe uma letra: ")
-  #verifica se acertou alguma letra
+
   errouLetra=True
   for i, let in enumerate(word):
     if word[i]==letraDig:
